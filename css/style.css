@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #d1cfcf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 20px;
+}
+
+.card {
+    max-width: 830px;
+    margin: auto;
+    background: #fff;
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+
+/* IMAGE BOX */
+.image-box {
+    position: relative; 
+    width: 45%;
+    overflow: hidden;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.image-box:hover img {
+    transform: scale(1.08);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); 
+    transition: background 0.5s ease; 
+}
+
+.image-box:hover .overlay {
+    background: rgba(0, 0, 0, 0); 
+}
+
+/* FORM BOX */
+.form-box {
+    width: 55%;
+    padding: 40px;
+}
+
+.form-box h2 {
+    color: #2c5364;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* INPUTS */
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.input-box i.fa-user,
+.input-box i.fa-envelope,
+.input-box i.fa-lock {
+    left: 12px;
+}
+
+.eye {
+    right: 12px;
+    cursor: pointer;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #2c5364;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+button:hover {
+    background: #203a43;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(44, 83, 100, 0.35);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* SOCIAL */
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    color: #999;
+}
+
+.social-login button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #f4f7fb;
+    color: #333;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.social-login button:hover {
+    background: #eaf0f6;
+    transform: translateY(-2px);
+}
+
+.social-login img {
+    width: 18px;
+}
+
+/* TEXT */
+.text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.text a {
+    color: #2c5364;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+.text a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #2c5364;
+    transition: width 0.3s ease;
+}
+
+.text a:hover::after {
+    width: 100%;
+}
+
+/* CARD ANIMATION */
+.card {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* INPUT FOCUS */
+.input-box input:focus {
+    border-color: #2c5364;
+    box-shadow: 0 0 0 3px rgba(44, 83, 100, 0.15);
+    outline: none;
+}
+
+.input-box input:focus + i,
+.input-box input:focus ~ i {
+    color: #2c5364;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 700px) {
+
+    .card {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .image-box {
+        display: none; 
+    }
+
+    .form-box {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+
+
+
